@@ -1,0 +1,72 @@
+<% layout('/layouts/main') %>
+ <div class="container mt-4">
+        <h5><strong>Search results for <%= ' '+'"'+searchQuery+'"' %></strong> </h5>
+    <% if(events.length>0){ %>
+
+        <% for(i=0;i<events.length;i=i+2) {%>
+            <div class="row">
+                <% if(events[i]) { %>
+
+                    <div class="col-md-6 mb-3 ">
+
+                        <div class="card ">
+                            <a href="/eventview/<%= events[i].objectID %>">
+                                <img src="https://s3.amazonaws.com/aiti123vinayak/<%= events[i].objectID %>.<%= events[i].extName %>" alt="" class="img-fluid card-img"
+                                    style="max-height:200px">
+                            </a>
+                            <div class="card-footer m-0 p-0">
+                                <h6>
+                                    <%= events[i].location %>
+                                </h6>
+                                <div class="content">
+                                    <p>
+                                        <%- events[i].content.slice(20) %>
+                                            <a href="/eventview/<%= events[i].objectID %>" class="more"> More...</a>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                        <% if(events[i+1]) { %>
+                            <div class="col-md-6 mb-3 ">
+
+                                <div class="card">
+                                    <a href="/eventview/<%= events[i+1].objectID %>">
+                                        <img src="https://s3.amazonaws.com/aiti123vinayak/<%= events[i+1].objectID %>.<%= events[i+1].extName %>" alt="" class="img-fluid card-img"
+                                            style="max-height:200px">
+                                    </a>
+                                    <div class="card-footer m-0 p-0">
+                                        <h6>
+                                            <%= events[i+1].location %>
+                                        </h6>
+                                        <div class="content">
+                                            <p>
+                                                <%- events[i+1].content.slice(20) %>
+                                                    <a href="/eventview/<%= events[i+1].objectID %>" class="more"> More...</a>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <% } %>
+            </div>
+
+            <% } %>
+
+
+                <% } else{%>
+
+
+
+                   
+
+                        <h3>Sorry no results found...</h3>
+
+                        <% } %>
+ </div>
+    

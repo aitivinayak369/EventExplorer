@@ -1,0 +1,66 @@
+<% layout('/layouts/main') -%>
+<hr>
+ <center><h5>Create your group page here..</h5></center>
+<div class="container pl-md-5 pr-md-5 eventcreation">
+    <hr>
+    <br>
+    
+   <form action="/groupcreation" enctype="multipart/form-data" method="POST">
+       
+       <div class="form-group">
+      
+                
+      
+           <div class="row mb-2">
+                <div class="input-group col-md-9 mb-2 ">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Group name</span>
+        
+                        </div>
+                        <input type="text" class="form-control" name="groupName" placeholder="Enter your group name here..." required>
+        
+                    </div>
+               <select name="category" id="" class="form-control  col-md-3 ml-md-0 mr-md-0 ml-3 mr-3 mb-2" required>
+                <option>Category</option>
+                <option value="tech">tech</option>
+                <option value="travelling">travelling</option>
+                <option value="devotional">devotional</option>
+               </select>
+           </div>
+           
+           <h5>Group Page:</h5>
+           <div>
+              <textarea name="content" id="editorContent"  class="form-control mx-auto" required></textarea>
+           </div>
+           <br>
+           <div class="row mb-2">
+               <!-- <div class="input-group col-4 ">
+                   <div class="input-group-prepend">
+                       <span class="input-group-text">Limit:</span>
+                   </div>
+                   <input type="number" name="membersLimit" class="form-control">
+               </div> -->
+               <div class="col-8">
+                   <div class="input-group">
+                       <div class="input-group-prepend">
+                           <span class="input-group-text">Display Image:</span>
+                       </div>
+                       <div class="btn btn-primary" id="choosefile" title="Choose group diaplay image!"> Choose File</div>
+                   
+                   </div>
+                   <input type="file" hidden class="form-control" name="groupImage" id="filechooser" required>
+               </div>
+               <div class="col-2">
+                    <button type="submit" class="btn btn-primary ml-auto ">Submit</button>
+             </div>
+               
+           </div>
+           
+       </div>
+       <br>
+         
+      
+       
+   </form>
+   <br>
+</div>

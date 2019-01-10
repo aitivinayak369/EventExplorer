@@ -1,0 +1,128 @@
+<% layout('/layouts/main') -%>
+    <hr>
+    <center>
+        <h5>Create your event here..</h5>
+    </center>
+
+    <div class="container pl-md-5 pr-md-5 eventcreation">
+        <hr>
+        <br>
+
+        <form action="/eventcreation" method="POST" id="form" enctype="multipart/form-data">
+
+            <div class="form-group">
+
+
+
+                <div class="row">
+                    <div class="input-group col-md-9 mb-2 ">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Event name</span>
+
+                        </div>
+                        <input required type="text" class="form-control" placeholder="Enter your event name here..." name="eventName">
+
+                    </div>
+                    <select required name="category" id="" class="form-control  col-md-3 ml-md-0 mr-md-0 ml-3 mr-3 mb-2">
+                        <option>Category</option>
+                        <option value="tech" >tech</option>
+                        <option value="travelling">travelling</option>
+                        <option value="devotional">devotional</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <textarea required name="content" id="editorContent" class="form-control mx-auto"></textarea>
+                </div>
+                <br>
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <span><strong>Note:</strong><p>Please do add your addres in event page as well. The below address is used to result the events near by user for user experience.</p></span>
+    
+                </div>
+                <br>
+                <div class="row mb-2">
+                    <div class="input-group col-6 mb-2 col-md-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">country:</span>
+                        </div>
+                        <input required type="text" name="country" class="form-control" >
+                    </div>
+                    <div class="input-group col-6 mb-2 col-md-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Postal code:</span>
+                        </div>
+                        <input required type="number" name="postalCode" class="form-control" >
+                    </div>
+                    <div class="input-group col-6 mb-2 col-md-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">City:</span>
+                        </div>
+                        <input required type="text" name="city" class="form-control" >
+                    </div>
+                    <div class="input-group col-6 mb-2 col-md-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">street:</span>
+                        </div>
+                        <input required type="text" name="street" class="form-control" >
+                    </div>
+                    <div class="col-6 mb-2 col-md-4 input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Venue or Landmark:</span>
+                        </div>
+                        <input required type="text" name="landmarkVenue" class="form-control" >
+                    </div>
+                    <div class="col-8 mb-2 col-md-4 input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">state:</span>
+                        </div>
+                        <input required type="text" name="state" class="form-control" >
+                    </div>
+
+                </div>
+                <br>
+                <div class="row">
+                        <div class="input-group col-md-5 col-10 offset-1 mb-1 mr-md-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Date:</span>
+                                </div>
+                                <input required type="date" name="date" class="form-control" >
+                            </div>
+                            <div class="input-group col-md-4 col-10 offset-1 mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Time:</span>
+                                    </div>
+                                    <input required type="time" name="time" class="form-control" >
+                                </div>
+                </div>
+                <br>
+                <div class="row mb-2">
+                    <div class="input-group col-4 ">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Limit:</span>
+                        </div>
+                        <input required type="number" name="attendenceLimit" class="form-control" >
+                    </div>
+                    <div class="col-4">
+                        
+                            <div class="btn btn-primary" id="choosefile" title="Choose display image for your event,[[Note:required!]]">Choose File</div>
+                        <input required type="file" hidden class="form-control" name="image" id="filechooser" >
+                     
+                        
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary ml-auto ">Submit</button>
+                    </div>
+
+                </div>
+
+            </div>
+            <br>
+
+            <!-- <input type="file"  class="form-control" name="image1" id="filechooser" >
+ -->
+
+        </form>
+        <br>
+    </div>
+    

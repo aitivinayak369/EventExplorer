@@ -1,0 +1,154 @@
+<% layout('./layouts/main') -%>
+    <div class="container mb-2 mt-3">
+        <div class="row mb-3 ml-1">
+            <a href="/"><div class="btn btn-success">&lt&lt Back</div></a>
+            
+        </div>
+        <div class="row ml-auto">
+            <a href="/groupcreation" class="ml-auto mr-3">
+                <div class="btn btn-primary ">
+                        Create new group
+                    </div>
+            </a>
+           
+        </div>
+    </div>
+
+    <hr>
+    <div class="container mb-3">
+        <div class="row ml-4">
+            <h5><strong>Created Groups</strong></h5>
+        </div>
+        <% if(groupC.length>0){ %>
+
+            <% for(i=0;i<groupC.length;i=i+2) {%>
+                <div class="row">
+                    <% if(groupC[i]) { %>
+    
+                        <div class="col-md-6 mb-3 ">
+    
+                            <div class="card ">
+                                <a href="/groupview/<%= groupC[i]._id %>">
+                                    <img src="https://s3.amazonaws.com/aiti123vinayak/<%= groupC[i]._id %>.<%= groupC[i].extName %>" alt="" class="img-fluid card-img"
+                                        style="max-height:200px">
+                                </a>
+                                <div class="card-footer m-0 p-0">
+                                
+                                    <div class="content">
+                                        <p>
+                                            <%- groupC[i].content.slice(20) %>
+                                                <a href="/groupview/<%= groupC[i]._id %>" class="more"> More...</a>
+                                        </p>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                            <% if(groupC[i+1]) { %>
+                                <div class="col-md-6 mb-3 ">
+    
+                                    <div class="card">
+                                        <a href="/groupview/<%= groupC[i+1]._id %>">
+                                            <img src="https://s3.amazonaws.com/aiti123vinayak/<%= groupC[i+1]._id %>.<%= groupC[i+1].extName %>" alt="" class="img-fluid card-img"
+                                                style="max-height:200px">
+                                        </a>
+                                        <div class="card-footer m-0 p-0">
+                                            
+                                            <div class="content">
+                                                <p>
+                                                    <%- groupC[i+1].content.slice(20) %>
+                                                        <a href="/groupview/<%= groupC[i+1]._id %>" class="more"> More...</a>
+                                                </p>
+                                            </div>
+    
+                                        </div>
+                                    </div>
+    
+                                </div>
+    
+                                <% } %>
+                </div>
+    
+                <% } %>
+    
+    
+                    <% } else{%>
+    
+    
+    
+                       
+    
+                            <h3>No groups created yet...</h3>
+    
+                            <% } %>
+        
+        <!-- 2 section  -->
+        <hr>
+        <div class="row ml-4">
+            <h5><strong>Groups you are in..</strong></h5>
+        </div>
+        <% if(groupM.length>0){ %>
+
+            <% for(i=0;i<groupM.length;i=i+2) {%>
+                <div class="row">
+                    <% if(groupM[i]) { %>
+    
+                        <div class="col-md-6 mb-3 ">
+    
+                            <div class="card ">
+                                <a href="/groupview/<%= groupM[i]._id %>">
+                                    <img src="https://s3.amazonaws.com/aiti123vinayak/<%= groupM[i]._id %>.<%= groupM[i].extName %>" alt="" class="img-fluid card-img"
+                                        style="max-height:200px">
+                                </a>
+                                <div class="card-footer m-0 p-0">
+                                
+                                    <div class="content">
+                                        <p>
+                                            <%- groupM[i].content.slice(20) %>
+                                                <a href="/groupview/<%= groupM[i]._id %>" class="more"> More...</a>
+                                        </p>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                            <% if(groupM[i+1]) { %>
+                                <div class="col-md-6 mb-3 ">
+    
+                                    <div class="card">
+                                        <a href="/groupview/<%= groupM[i+1]._id %>">
+                                            <img src="https://s3.amazonaws.com/aiti123vinayak/<%= groupM[i+1]._id %>.<%= groupM[i+1].extName %>" alt="" class="img-fluid card-img"
+                                                style="max-height:200px">
+                                        </a>
+                                        <div class="card-footer m-0 p-0">
+                                            
+                                            <div class="content">
+                                                <p>
+                                                    <%- groupM[i+1].content.slice(20) %>
+                                                        <a href="/groupview/<%= groupM[i+1]._id %>" class="more"> More...</a>
+                                                </p>
+                                            </div>
+    
+                                        </div>
+                                    </div>
+    
+                                </div>
+    
+                                <% } %>
+                </div>
+    
+                <% } %>
+    
+    
+                    <% } else{%>
+    
+    
+    
+                       
+    
+                            <h3>Your not in any group...</h3>
+    
+                            <% } %>
+    </div>

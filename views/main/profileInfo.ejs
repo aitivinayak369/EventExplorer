@@ -1,0 +1,42 @@
+<% layout('layouts/main') -%>
+    <div class="container mt-4">
+
+        <div class="row">
+            <div class="col-md-9 mb-1 mr-1 border border-primary pt-4">
+                <img src="<%= user.profileImage %>" alt="" class="img-fluid" style="width:200px;height:200px">
+                <hr>
+                <h4>Name:<%= user.name %></h4>
+                <h4>Contact:<%= user.email %></h4>
+                <% if(user.interests!='click change button beside it, to add your interests here..'){%>
+                    <h4>Interests:<%= user.interests %></h4>
+                <%}else{%>
+                    <h4>Interest:Have not put any interests yet</h4>
+                <%}%>
+                
+            </div>
+            <div class="col-md-2  border border-primary pt-4">
+                <%if(memberInGroups) {%>
+                    <h5><strong>Member in groups:</strong></h5>
+                    <% for(i=0;i<memberInGroups.length;i++){%>
+                            <a href="/groupview/<%= memberInGroups[i]._id %>"><%= memberInGroups[i].groupName %></a>
+                        <%} %>
+                    
+                    
+                    
+                <%} %>
+                <%if(createdGroups) {%>
+                    <h5><strong>created groups:</strong></h5>
+                    <% for(i=0;i<createdGroups.length;i++){%>
+                            <a href="/groupview/<%= createdGroups[i]._id %>"><%= createdGroups[i].groupName %></a>
+                        <%} %>
+                    
+                    
+                    
+                <%} %>
+                </div>
+        </div>
+        <br>
+        <br>
+
+       
+    </div>

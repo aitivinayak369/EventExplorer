@@ -1,0 +1,108 @@
+<% layout('layouts/main') -%>
+<input type="text" value="<%= user._id %>" hidden id="userID">
+    <div class="container">
+        <hr>
+        <div class="row">
+            <h4>,<strong> Profile Settings</strong></h4>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-8">
+                <h6> <span class="h3">Display Name:</span> <input type="text" id="nameValue" value="<%=user.name%>"> </h6>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-success" id="changeName">Change</button>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-8" id="1">
+                <h6><span class="h3">Profile Privacy: </span>
+                    <% if(user.profilePrivacy=='public') {%>
+                        <label class="m-1 radio-inline">public <input type="radio" name="pofilePrivacy" value="public" checked></label>
+
+                    <label class="m-1 radio-inline">private <input type="radio" name="pofilePrivacy" value="private" ></label>
+                    <%} else{%>
+                        <label class="m-1 radio-inline">public <input type="radio" name="pofilePrivacy" value="public" ></label>
+
+                    <label class="m-1 radio-inline">private <input type="radio" name="pofilePrivacy" value="private" checked ></label>
+                   <% } %>
+                    </h6>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-success" id="changeProfilePrivacy">Change</button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-8">
+                <h6><span class="h3">Created Groups Privacy:</span> 
+                    <% if(user.ownGroupPrivacy=='public') {%>
+                        <label class="m-1 radio-inline">public <input type="radio" name="ownGroupPrivacy" value="public" checked required></label>
+
+                    <label class="m-1 radio-inline">private <input type="radio" name="ownGroupPrivacy" value="private" required></label>
+                    <%} else{%>
+                        <label class="m-1 radio-inline">public <input type="radio" name="ownGroupPrivacy" value="public" required></label>
+
+                    <label class="m-1 radio-inline">private <input type="radio" name="ownGroupPrivacy" value="private" checked required></label>
+                   <% } %>
+                </h6>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-success" id="changeOwnGroupPrivacy">Change</button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-8">
+                <h6><span class="h3">Joined Groups Privacy:</span>  
+                    <% if(user.memberGroupPrivacy=='public') {%>
+                    <label class="m-1 radio-inline">public <input type="radio" name="memberGroupPrivacy" value="public" checked required></label>
+
+                <label class="m-1 radio-inline">private <input type="radio" name="memberGroupPrivacy" value="private" required></label>
+                <%} else{%>
+                    <label class="m-1 radio-inline">public <input type="radio" name="memberGroupPrivacy" value="public" required></label>
+
+                <label class="m-1 radio-inline">private <input type="radio" name="memberGroupPrivacy" value="private" checked required></label>
+               <% } %>
+                </h6>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-success" id="changeMemberGroupPrivacy">Change</button>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row ml-2">
+
+            <h4><span class="text-muted"><h6><span class="h3"> Contact:</span></h6></span><%=user.email%>
+                    </h5>
+        </div>
+        <br>
+        <div class="row ml-2">
+            <div class="col-8">
+                    <h4><span class="text-muted"><h6><span class="h3">Interests:</span> </h6>
+                    </span>
+                    <input type="text" value="<%=user.interests%>" id="userInterets" class="form-control-lg">
+                            </h5>
+            </div>
+            <div class="col-4">
+                    <button class="btn btn-success" id="changeInterests">Change</button>
+                </div>
+            
+        </div>
+        <hr>
+        <div class="row ml-2">
+            <div class="col-6 h2">
+                Profile Image
+            </div>
+            <div class="col-6">
+                <button class="btn btn-success">Change</button>
+            </div>
+        </div>
+        <br>
+        <div class="row ml-2">
+            <img src="<%=user.profileImage%>" style="width:200px;height:200px" alt="" class="img-fluid">
+        </div>
+    </div>
