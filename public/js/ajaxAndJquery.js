@@ -34,6 +34,8 @@ $(document).ready(function()
     $('#ANButton').click(function(){
         var  eid= $('.ANEID').val();
         var check = $('.ANStatus').val();
+        //console.log()
+
         console.log(check);
         if(check==-1)
         {
@@ -48,7 +50,7 @@ $(document).ready(function()
             }
             })
         }
-        else if(check===false){
+        else if(check==='false'){
            $('#login').click();
         }
         else{

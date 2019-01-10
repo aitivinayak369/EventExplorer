@@ -296,7 +296,7 @@ app.get('/eventview/:eid',(req,res)=>{
                 
             }
               else{
-                  res.render('main/eventView',{createEvent:false,jsFile:null,event:event,user:null,ANStatus:false,comments:comments});
+                  res.render('main/eventView',{createEvent:false,jsFile:null,event:event,user:null,ANStatus:false,comments:comments,membersAttending:event.membersAttending});
               }
         }).catch((err)=>{
             console.error(err)
