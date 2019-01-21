@@ -28,8 +28,8 @@ const eventSchema = new Schema({
     Time:String
 });
 eventSchema.plugin(mongooseAlgolia,{
-    appId: '2U7STUMUPD',
-    apiKey: '85043e5fea69485367e24167e180441e',
+    appId: '',
+    apiKey: '',
     indexName: 'eventSchema', //The name of the index in Algolia, you can also pass in a function
     selector: 'eventName category content titleImage _id landmarkVenue location extName', //You can decide which field that are getting synced to Algolia (same as selector in mongoose)
     defaults: {

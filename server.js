@@ -20,7 +20,7 @@ const socketIO =  require('socket.io');
 const request = require('request');
 const http = require('http');
 const algoliaSearch = require('algoliasearch');
-const client = algoliaSearch('2U7STUMUPD','85043e5fea69485367e24167e180441e');
+const client = algoliaSearch('','');
 const indexE = client.initIndex('eventSchema')
 const indexG = client.initIndex('groupSchema');
 const Event = require('./models/event');
@@ -34,7 +34,7 @@ mongoose.connect('mongodb://localhost:27017/ee').then(()=>{
     console.log('error mongo:',err)
 })
 
-const s3fsImpl = new s3fs('aiti123vinayak',{accessKeyId:'AKIAIHEZUN6WR53RIF6Q',secretAccessKey:'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'});
+const s3fsImpl = new s3fs('aiti123vinayak',{accessKeyId:'',secretAccessKey:''});
 s3fsImpl.create();
 //console.log(util.inspect(s3fsImpl.writeFile));
 require('./config/passportSetUp')
@@ -405,7 +405,7 @@ app.get('/particulargroupmanager',isAuthenticated,(req,res)=>{
         }
         console.log('Date:=============',fields.date);
         requesstAddresss=fields.country+','+fields.postalCode+','+fields.city+','+fields.street+','+fields.landmarkVenue;
-        request('https://maps.googleapis.com/maps/api/geocode/json?address='+requesstAddresss+'&key=AIzaSyCtE0pw4LFMpSMZqk-P5g93oCucAEuTSlY',(err,response,body)=>{
+        request('https://maps.googleapis.com/maps/api/geocode/json?address='+requesstAddresss+'&key=',(err,response,body)=>{
             //{
              // console.error('err',err);
             //  console.log('res',response);
@@ -485,7 +485,7 @@ app.get('/particulargroupmanager',isAuthenticated,(req,res)=>{
           }
           console.log('Date:=============',fields.date);
           requesstAddresss=fields.country+','+fields.postalCode+','+fields.city+','+fields.street+','+fields.landmarkVenue;
-          request('https://maps.googleapis.com/maps/api/geocode/json?address='+requesstAddresss+'&key=AIzaSyCtE0pw4LFMpSMZqk-P5g93oCucAEuTSlY',(err,response,body)=>{
+          request('https://maps.googleapis.com/maps/api/geocode/json?address='+requesstAddresss+'&key=',(err,response,body)=>{
               //{
                // console.error('err',err);
               //  console.log('res',response);
